@@ -1,0 +1,73 @@
+1
+while.sh:
+#!/bin/sh
+INPUT_STRING=”hello”  Da uma variavel
+while [[ $INPUT_STRING != "bye" ]]   inicia um loop
+ do
+  echo "Please type something in (bye to quit)"   manda uma mensagem
+  read INPUT_STRING  pede a variavel
+  echo "You typed: $INPUT_STRING"  mostra a variavel escrita
+done    termina o loop
+
+
+
+2
+while2.sh:
+#!/bin/sh
+while read input_text   inicia um loop
+do
+  case $input_text in     aplica variaveis
+        hello)          echo English    ;;
+        howdy)          echo American   ;;
+        gday)           echo Australian ;;
+        bonjour)        echo French     ;;
+        "guten tag")    echo German     ;;
+        *)              echo Unknown Language: $input_text
+                ;;
+   esac  
+done ​< myfile.txt   termina o loop
+
+
+
+3
+talk.sh:
+#!/bin/sh
+
+echo "Please talk to me ..."  manda uma mensagem 
+while true   começa o loop
+do
+  read INPUT_STRING   pede a variavel 
+  case $INPUT_STRING in   mostra as variaveis
+	hello)
+		echo "Hello yourself!"
+		;;
+	bye)
+		echo "See you again!"
+		break
+		;;
+	*)
+		echo "Sorry, I don't understand"
+		;;
+  	   esac
+done  termina o loop
+echo  da um espaço vazio
+echo "That's all folks!" manda uma mensagem
+
+
+
+4
+pwrd.sh:
+#!/bin/bash
+
+echo "Enter username" manda a mensagem
+read username   pede a variavel
+echo "Enter password"  manda a mensagem
+read password   pede a variavel
+
+if [[ $username == "admin" && $password == "secret" ]]  mostra que o nome pode ser visto e a senha é secreta
+then
+        echo "valid user"  manda mensagem
+else
+        echo "invalid user"  manda mensagem
+fi  termina
+
