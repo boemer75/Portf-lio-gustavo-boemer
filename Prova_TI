@@ -1,0 +1,10 @@
+#!/bin/bash
+clear
+
+cut -d: -f /etc/passwd
+
+
+#!/bin/bash
+clear
+
+ls -l $1 | cut 7-10
